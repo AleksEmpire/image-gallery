@@ -1,7 +1,23 @@
 import React, { Component } from "react";
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
 import { Consumer } from "../../Context";
 export default class ImageCard extends Component {
+  state = {
+    isModalOpen: false,
+    imgOpenSrc: "",
+  };
+
+  modalOpen = (e) => {
+    let imgSrc = e.target.src;
+    this.setState({
+      isModalOpen: true,
+      imgOpenSrc: imgSrc,
+    });
+    console.log("open");
+  };
   render() {
+    const { imgOpenSrc } = this.state;
     return (
       <Consumer>
         {(value) => {
@@ -13,9 +29,32 @@ export default class ImageCard extends Component {
             return (
               <div
                 key={id}
-                className="max-w-sm rounded overvflow-hidden shadow-lg"
+                className="image-wrapper rounded overvflow-hidden shadow-lg"
               >
-                <img src={webformatURL} alt="" className="w-full" />
+                <img
+                  src={webformatURL}
+                  alt=""
+                  className="w-full"
+                  onClick={this.modalOpen}
+                />
+                {this.state.isModalOpen && (
+                  <Lightbox
+                    mainSrc={imgOpenSrc}
+                    // nextSrc={item[(index + 1) % item.length]}
+                    // prevSrc={item[(index + item.length - 1) % item.length]}
+                    onCloseRequest={() => this.setState({ isModalOpen: false })}
+                    // onMovePrevRequest={() =>
+                    //   this.setState({
+                    //     photoIndex: (index + images.length - 1) % images.length,
+                    //   })
+                    // }
+                    // onMoveNextRequest={() =>
+                    //   this.setState({
+                    //     photoIndex: (index + 1) % images.length,
+                    //   })
+                    // }
+                  />
+                )}
                 <div className="px-6 py-4">
                   <div className="font-bold text-purple text-xl mb-2">
                     Photo by {user}

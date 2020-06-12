@@ -1,3 +1,6 @@
+html {
+  background-color: #333;
+}
 .App {
   text-align: center;
 }
@@ -32,7 +35,33 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* custom style */
+
+img {
+  height: 256px;
+}
+
+.custom-style-field {
+  color: #fff;
+}
+
+.shadow-lg {
+  background-color: #808080;
+  cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+  img {
+    height: auto;
+  }
+  .grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    padding: 30px;
   }
 }

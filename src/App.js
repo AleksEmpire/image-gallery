@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ImageCard from "./components/imageCard/ImageCard";
 import ImageSearch from "./components/imageSearch/ImageSearch";
+import "./App.css";
 export default class App extends Component {
   render() {
     return (

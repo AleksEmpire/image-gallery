@@ -47,7 +47,7 @@ export default class ImageSearch extends Component {
                     name="imgTitle"
                     value={imgTitle}
                     onChange={this.onChangeHandler.bind(this)}
-                    className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                    className="custom-style-field appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
                     type="text"
                     placeholder="Search Image Term..."
                   />

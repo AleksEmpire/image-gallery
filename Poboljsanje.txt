@@ -1,0 +1,3 @@
+Mozda ubaciti hover i background overlay na img zatim na slici ispisati ime autora,
+
+ubaciti kategorije i filtriranje prema kategoriji

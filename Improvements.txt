@@ -1,0 +1,5 @@
+
+Maybe to add hover and background overlay an img and on hover to display name of the author
+
+Add categories and do filter based to categorie
+
